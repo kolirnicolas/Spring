@@ -1,19 +1,29 @@
 package com.example.demo;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+@AllArgsConstructor
 public class BigBike {
-    public void implamentation() {
-        Brakes brakes = new Brakes();
+    private final Brakes brakes;
+    private final Frame frame;
+    private final Pedal pedal;
+    private final SteeringWheel steeringWheel;
+    private final Wheel wheel;
+    private final Transmission transmission;
+
+
+    public void implementation() {
         brakes.createBigBike();
-        Frame frame = new Frame();
         frame.createBigBike();
-        Pedal pedal = new Pedal();
         pedal.createBigBike();
-        SteeringWheel steeringWheel = new SteeringWheel();
         steeringWheel.createBigBike();
-        Transmission transmission = new Transmission();
-        transmission.createBigBike();
-        Wheel wheel = new Wheel();
         wheel.createBigBike();
+        transmission.createBigBike();
+
     }
 
 
