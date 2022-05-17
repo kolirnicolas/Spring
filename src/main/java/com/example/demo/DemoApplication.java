@@ -19,6 +19,4 @@ public class DemoApplication {
     public void bigBikeMethod() {
         bigBike.implementation();
     }
-
-
 }

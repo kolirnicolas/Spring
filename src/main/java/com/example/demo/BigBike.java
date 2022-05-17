@@ -3,8 +3,6 @@ package com.example.demo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @AllArgsConstructor
 public class BigBike {
@@ -14,7 +12,6 @@ public class BigBike {
     private final SteeringWheel steeringWheel;
     private final Wheel wheel;
     private final Transmission transmission;
-
 
     public void implementation() {
         brakes.createBigBike();
