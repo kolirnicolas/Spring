@@ -18,5 +18,11 @@ public class DemoApplication {
         bigBike.implamentation();
     }
 
+    @EventListener(ContextRefreshedEvent.class)
+    public void bigBikeWithListInject() {
+        BigBikeWithListInjected bigBikeWithListInjected = new BigBikeWithListInjected();
+        bigBikeWithListInjected.run();
+    }
+
 
 }
