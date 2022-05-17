@@ -10,6 +10,7 @@ import org.springframework.context.event.EventListener;
 @AllArgsConstructor
 public class DemoApplication {
     private final BigBike bigBike;
+    private final BigBikeWithListInjected bigBikeWithListInjected;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -18,5 +19,10 @@ public class DemoApplication {
     @EventListener(ContextRefreshedEvent.class)
     public void bigBikeMethod() {
         bigBike.implementation();
+    }
+
+    @EventListener(ContextRefreshedEvent.class)
+    public void bigBikeWithListInject() {
+       bigBikeWithListInjected.addInterface();
     }
 }
