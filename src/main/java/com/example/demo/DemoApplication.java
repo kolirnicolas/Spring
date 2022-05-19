@@ -1,22 +1,18 @@
 package com.example.demo;
 
 import lombok.AllArgsConstructor;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 @AllArgsConstructor
 public class DemoApplication {
-    private final BigBike bigBike;
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Config.class);
+        String str =  annotationConfigApplicationContext.getBean(String.class);
+        System.out.println(str);
     }
 
-    @EventListener(ContextRefreshedEvent.class)
-    public void bigBikeMethod() {
-        bigBike.implementation();
-    }
+
 }
